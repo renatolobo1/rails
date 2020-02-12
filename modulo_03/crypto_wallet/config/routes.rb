@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get 'welcome/index'
+  get 'welcome/index'
   get '/inicio', to: 'welcome#index'
   resources :coins # Mapeia 7 rotas padrão
   # get '/coins', to 'conis#index'
