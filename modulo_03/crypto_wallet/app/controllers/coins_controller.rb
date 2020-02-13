@@ -1,6 +1,9 @@
 class CoinsController < ApplicationController
-  before_action :set_coin, only: [:show, :edit, :update, :destroy]
 
+  layout "adm"
+
+  before_action :set_coin, only: [:show, :edit, :update, :destroy]
+  
   # GET /coins
   # GET /coins.json
   def index
