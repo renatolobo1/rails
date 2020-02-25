@@ -5,11 +5,54 @@ namespace :dev do
       show_spinner("Apagando BD...") {%x(rails db:drop)}      
       show_spinner("Criando BD...", "Criado!") {%x(rails db:create )}
       show_spinner("Migrando BD...")  {%x(rails db:migrate )}
-      show_spinner("populando BD...") {%x(rails db:seed)}      
+      %x(rails dev:add_coins)  
+      %x(rails dev:add_mining_types)    
     else
       puts "você não está em modo de desenvolvimento!"
     end
   end
+  
+  desc "Cadastra as Moedas"
+  task add_coins: :environment do
+    show_spinner("Cadastrando Moedas...") do
+      coins = [      
+              {
+                  description: "Bitcoin",
+                  acronym: "BTC",
+                  url_imagem: "http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png"
+              },
+              {
+                  description: "Dollar",
+                  acronym: "$",
+                  url_imagem: "https://img2.gratispng.com/20171128/f9e/gold-coin-transparent-png-clipart-5a1d22de435229.9520313415118589102758.jpg"
+              },
+              {
+                  description: "Dash",
+                  acronym: "DA",
+                  url_imagem: "https://img2.gratispng.com/20171128/f9e/gold-coin-transparent-png-clipart-5a1d22de435229.9520313415118589102758.jpg"
+              },
+          ]
+
+    coins.each do |coin|
+      Coin.find_or_create_by!(coin)
+    end
+  end
+end
+desc "Cadastra os tipos de mineração"
+  task add_mining_types: :environment do
+    show_spinner("Cadastrando Tipos de Mineração...") do
+      mining_types = [
+        {name: "Proof of Work", acronym: "PoW"},
+        {name: "Proof of State", acronym: "PoS"},
+        {name: "Proof of capacity", acronym: "PoC"}
+      ]
+
+    mining_types.each do |mining_type|
+      MiningType.find_or_create_by!(mining_type)
+    end
+  end
+end
+
 
   private
   
