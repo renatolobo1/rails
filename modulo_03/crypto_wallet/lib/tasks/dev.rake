@@ -42,9 +42,9 @@ desc "Cadastra os tipos de mineração"
   task add_mining_types: :environment do
     show_spinner("Cadastrando Tipos de Mineração...") do
       mining_types = [
-        {name: "Proof of Work", acronym: "PoW"},
-        {name: "Proof of State", acronym: "PoS"},
-        {name: "Proof of capacity", acronym: "PoC"}
+        {description: "Proof of Work", acronym: "PoW"},
+        {description: "Proof of State", acronym: "PoS"},
+        {description: "Proof of capacity", acronym: "PoC"}
       ]
 
     mining_types.each do |mining_type|
