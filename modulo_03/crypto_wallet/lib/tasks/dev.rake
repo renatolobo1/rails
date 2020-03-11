@@ -5,32 +5,37 @@ namespace :dev do
       show_spinner("Apagando BD...") {%x(rails db:drop)}      
       show_spinner("Criando BD...", "Criado!") {%x(rails db:create )}
       show_spinner("Migrando BD...")  {%x(rails db:migrate )}
+      %x(rails dev:add_mining_types)  
       %x(rails dev:add_coins)  
-      %x(rails dev:add_mining_types)    
     else
       puts "você não está em modo de desenvolvimento!"
     end
   end
   
   desc "Cadastra as Moedas"
-  task add_coins: :environment do
+  task add_coins: :environment do 
     show_spinner("Cadastrando Moedas...") do
       coins = [      
               {
                   description: "Bitcoin",
                   acronym: "BTC",
-                  url_imagem: "http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png"
+                  url_imagem: "http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png",
+                  mining_type: MiningType.all.sample
               },
               {
                   description: "Dollar",
                   acronym: "$",
-                  url_imagem: "https://img2.gratispng.com/20171128/f9e/gold-coin-transparent-png-clipart-5a1d22de435229.9520313415118589102758.jpg"
+                  url_imagem: "https://img2.gratispng.com/20171128/f9e/gold-coin-transparent-png-clipart-5a1d22de435229.9520313415118589102758.jpg",
+                  mining_type: MiningType.all.sample
+
               },
               {
                   description: "Dash",
                   acronym: "DA",
-                  url_imagem: "https://img2.gratispng.com/20171128/f9e/gold-coin-transparent-png-clipart-5a1d22de435229.9520313415118589102758.jpg"
-              },
+                  url_imagem: "https://img2.gratispng.com/20171128/f9e/gold-coin-transparent-png-clipart-5a1d22de435229.9520313415118589102758.jpg",
+                  mining_type: MiningType.all.sample
+
+              }
           ]
 
     coins.each do |coin|
