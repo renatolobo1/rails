@@ -41,6 +41,7 @@ en:
     delete: "Delete"
     new: "New"
     back: "Back"
+    home: "Home"
   confirmation: "you are sure"
   new:
     coin: "New Coin"

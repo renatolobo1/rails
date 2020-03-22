@@ -10,6 +10,7 @@ pt-BR:
     delete: "Apagar"
     new: "Novo"
     back: "Voltar"
+    home: "Inicio"
   confirmation: "Você tem certeza?"
   new:
     coin: "Nova Moeda"
