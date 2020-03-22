@@ -9,4 +9,14 @@ pt-BR:
     show: "Mostrar"
     delete: "Apagar"
     new: "Novo"
+    back: "Voltar"
   confirmation: "Você tem certeza?"
+  new:
+    coin: "Nova Moeda"
+    mining_type: "Novo Tipo de Mineração"
+  editing:
+    coin: "Editando Coin"
+    mining_type: "Editando Mining Type"
+  showing:
+    coin: "Mostrando Moeda"
+    mining_type: "Mostrando Tipo de Mineração"
