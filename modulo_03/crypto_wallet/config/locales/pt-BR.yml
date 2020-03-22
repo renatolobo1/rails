@@ -15,7 +15,7 @@ pt-BR:
     coin: "Nova Moeda"
     mining_type: "Novo Tipo de Mineração"
   editing:
-    coin: "Editando Coin"
+    coin: "Editando Moeda"
     mining_type: "Editando Mining Type"
   showing:
     coin: "Mostrando Moeda"
