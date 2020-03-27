@@ -1,5 +1,4 @@
 'pt-BR':
-
   activerecord:
     models:
       admin:
@@ -7,15 +6,15 @@
         other: Administradores
       profile:
         one: Perfil
-        other: Perfis
-      attributes:
-        admin:
-          id: Código
-          email: Email
-          created_at: Criando em
-          updated_at: Atualizado em
-        profile:
-          id: Código
-          email: Email
-          created_at: Criando em
-          updated_at: Atualizado em  
+        other: Perfies
+    atrributes:
+      admin:
+        id: Código
+        email: Email
+        created_at: Criado em
+        updated_at: Atualido em  
+      profile:
+        id: Código
+        email: Email
+        created_at: Criado em
+        updated_at: Atualido em    
